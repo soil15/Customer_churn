@@ -1,0 +1,50 @@
+[ 2024-04-13 19:43:13,444 ] 27 root - INFO - Data read successfully................
+[ 2024-04-13 19:43:13,493 ] 38 root - INFO - Saved train data to Artifacts\train.csv
+[ 2024-04-13 19:43:13,510 ] 41 root - INFO - Saved test data to Artifacts\test.csv
+[ 2024-04-13 19:43:13,510 ] 43 root - INFO - Data Ingestion Compelete......................
+[ 2024-04-13 19:43:13,534 ] 75 root - INFO - values : state                                       NH
+account_length                             124
+area_code                        area_code_415
+international_plan                          no
+voice_mail_plan                             no
+number_vmail_messages                        0
+total_day_minutes                        254.3
+total_day_calls                            113
+total_day_charge                         43.23
+total_eve_minutes                         78.9
+total_eve_calls                            104
+total_eve_charge                          6.71
+total_night_minutes                      153.2
+total_night_calls                           69
+total_night_charge                        6.89
+total_intl_minutes                        11.8
+total_intl_calls                             2
+total_intl_charge                         3.19
+number_customer_service_calls                2
+churn                                       no
+Name: 0, dtype: object
+[ 2024-04-13 19:43:13,560 ] 52 root - INFO - Columns selected : Index(['state', 'area_code', 'international_plan', 'voice_mail_plan',
+       'number_vmail_messages', 'total_day_minutes', 'total_day_calls',
+       'total_day_charge', 'total_eve_charge', 'total_night_charge',
+       'total_intl_minutes', 'total_intl_calls', 'total_intl_charge',
+       'number_customer_service_calls', 'churn'],
+      dtype='object')
+[ 2024-04-13 19:43:13,568 ] 56 root - INFO - Preprocessing objects : {'international_plan': LabelEncoder(), 'voice_mail_plan': LabelEncoder(), 'churn': LabelEncoder(), 'area_code': LabelEncoder(), 'state': TargetEncoder(cols=['state'])}
+[ 2024-04-13 19:43:13,587 ] 52 root - INFO - Columns selected : Index(['state', 'area_code', 'international_plan', 'voice_mail_plan',
+       'number_vmail_messages', 'total_day_minutes', 'total_day_calls',
+       'total_day_charge', 'total_eve_charge', 'total_night_charge',
+       'total_intl_minutes', 'total_intl_calls', 'total_intl_charge',
+       'number_customer_service_calls', 'churn'],
+      dtype='object')
+[ 2024-04-13 19:43:13,590 ] 56 root - INFO - Preprocessing objects : {'international_plan': LabelEncoder(), 'voice_mail_plan': LabelEncoder(), 'churn': LabelEncoder(), 'area_code': LabelEncoder(), 'state': TargetEncoder(cols=['state'])}
+[ 2024-04-13 19:43:14,931 ] 39 root - INFO - ************************ Classification report ************************
+[ 2024-04-13 19:43:14,953 ] 40 root - INFO -               precision    recall  f1-score   support
+
+           0       0.97      0.99      0.98      1076
+           1       0.91      0.81      0.86       199
+
+    accuracy                           0.96      1275
+   macro avg       0.94      0.90      0.92      1275
+weighted avg       0.96      0.96      0.96      1275
+
+[ 2024-04-13 19:43:14,954 ] 41 root - INFO - ***********************************************************************
