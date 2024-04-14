@@ -10,3 +10,5 @@ Requires-Dist: scikit-learn
 Requires-Dist: category_encoders
 Requires-Dist: xgboost
 Requires-Dist: streamlit
+Requires-Dist: streamlit-lottie
+Requires-Dist: requests

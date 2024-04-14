@@ -7,7 +7,6 @@ from src.components.model_trainning import ModelTrainning
 from src.utils import load_obj
 
 
-
 class Prediction:
 
     def __init__(self, 
@@ -95,7 +94,9 @@ class Prediction:
 
             prediction = model.predict(df)
 
-            return (df, prediction)
+            class_repo = load_obj(model_train_obj.model_trainning_cofg_obj.class_repo_path)
+
+            return (df, prediction, class_repo)
             
 
         except Exception as e:

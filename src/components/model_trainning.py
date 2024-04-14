@@ -8,11 +8,13 @@ import sys
 from dataclasses import dataclass
 import os
 from src.utils import load_obj, save_obj
+import pandas as pd
 
 @dataclass
 class ModelTrainningConfg:
     best_param_path = os.path.join('Artifacts', 'best_params.pkl')
     model_path = os.path.join('Artifacts', 'model.pkl')
+    class_repo_path = os.path.join('Artifacts', 'class_repo')
 
 
 class ModelTrainning:
@@ -39,6 +41,8 @@ class ModelTrainning:
             logging.info('************************ Classification report ************************')
             logging.info(classification_report(y_test, y_pred))
             logging.info('***********************************************************************')
+
+            save_obj(self.model_trainning_cofg_obj.class_repo_path, pd.DataFrame(data=classification_report(y_test, y_pred, output_dict=True)).iloc[0:3, 0:3])
 
         except Exception as e:
             logging.info('Exception raised in model trainning')
